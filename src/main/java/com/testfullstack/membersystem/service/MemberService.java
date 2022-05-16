@@ -7,4 +7,5 @@ import java.util.List;
 public interface MemberService {
   public Member saveMember(Member member);
   public List<Member> getAllMembers();
+  public Member getMember(int id);
 }

@@ -14,10 +14,18 @@ public class MemberController {
   @Autowired
   private MemberService memberService;
 
+  // request bodyによるpost時
   @PostMapping("/add")
   public String add(@RequestBody Member member){
     memberService.saveMember(member);
     return "New Member is added";
+  }
+
+  // URL parameterによるpost
+
+  @GetMapping
+  public Member member(@RequestParam("id") int id){
+    return memberService.getMember(id);
   }
 
   @GetMapping("getAll")
